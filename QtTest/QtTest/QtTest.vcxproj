@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <LibraryPath>c:\Program Files\VTK\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>QT_QML_DEBUG;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_OPENGLEXTENSIONS_LIB;QT_QUICKWIDGETS_LIB;QT_UITOOLS_LIB;QT_XML_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\VTK\include\vtk-8.2;.\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtXml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>vtkIOGeometry-8.2.lib;vtkImagingMath-8.2.lib;vtkRenderingVolumeOpenGL2-8.2.lib;vtkDICOM-8.2.lib;C:\Program Files\VTK\lib\vtkjpeg-8.2.lib;C:\Program Files\VTK\lib\vtkpng-8.2.lib;C:\Program Files\VTK\lib\vtktiff-8.2.lib;C:\Program Files\VTK\lib\vtkImagingColor-8.2.lib;C:\Program Files\VTK\lib\vtkImagingCore-8.2.lib;C:\Program Files\VTK\lib\vtkRenderingCore-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersSources-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersGeneral-8.2.lib;C:\Program Files\VTK\lib\vtkCommonComputationalGeometry-8.2.lib;C:\Program Files\VTK\lib\vtkCommonColor-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersGeometry-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersCore-8.2.lib;C:\Program Files\VTK\lib\vtkIOCore-8.2.lib;C:\Program Files\VTK\lib\vtkCommonExecutionModel-8.2.lib;C:\Program Files\VTK\lib\vtkCommonDataModel-8.2.lib;C:\Program Files\VTK\lib\vtkCommonTransforms-8.2.lib;C:\Program Files\VTK\lib\vtkCommonMisc-8.2.lib;C:\Program Files\VTK\lib\vtkCommonMath-8.2.lib;C:\Program Files\VTK\lib\vtkCommonSystem-8.2.lib;C:\Program Files\VTK\lib\vtkCommonCore-8.2.lib;C:\Program Files\VTK\lib\vtksys-8.2.lib;ws2_32.lib;Psapi.lib;C:\Program Files\VTK\lib\vtkzlib-8.2.lib;C:\Program Files\VTK\lib\vtkdoubleconversion-8.2.lib;C:\Program Files\VTK\lib\vtklz4-8.2.lib;C:\Program Files\VTK\lib\vtklzma-8.2.lib;C:\Program Files\VTK\lib\vtkInteractionStyle-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersExtraction-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersStatistics-8.2.lib;C:\Program Files\VTK\lib\vtkImagingFourier-8.2.lib;C:\Program Files\VTK\lib\vtkImagingSources-8.2.lib;C:\Program Files\VTK\lib\vtkIOImage-8.2.lib;C:\Program Files\VTK\lib\vtkDICOMParser-8.2.lib;C:\Program Files\VTK\lib\vtkmetaio-8.2.lib;C:\Program Files\VTK\lib\vtkGUISupportQt-8.2.lib;C:\Program Files\VTK\lib\vtkRenderingOpenGL2-8.2.lib;C:\Program Files\VTK\lib\vtkglew-8.2.lib;C:\Program Files\VTK\lib\vtkInteractionImage-8.2.lib;C:\Program Files\VTK\lib\vtkInteractionWidgets-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersHybrid-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersModeling-8.2.lib;C:\Program Files\VTK\lib\vtkImagingGeneral-8.2.lib;C:\Program Files\VTK\lib\vtkImagingHybrid-8.2.lib;C:\Program Files\VTK\lib\vtkRenderingAnnotation-8.2.lib;C:\Program Files\VTK\lib\vtkRenderingFreeType-8.2.lib;C:\Program Files\VTK\lib\vtkfreetype-8.2.lib;C:\Program Files\VTK\lib\vtkRenderingVolume-8.2.lib;C:\Program Files\VTK\lib\vtkIOXML-8.2.lib;C:\Program Files\VTK\lib\vtkIOXMLParser-8.2.lib;C:\Program Files\VTK\lib\vtkexpat-8.2.lib;qtmaind.lib;Qt53DCored.lib;Qt53DAnimationd.lib;Qt53DExtrasd.lib;Qt53DInputd.lib;Qt53DLogicd.lib;Qt53DRenderd.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5OpenGLd.lib;opengl32.lib;glu32.lib;Qt5Widgetsd.lib;Qt5OpenGLExtensionsd.lib;Qt5QuickWidgetsd.lib;Qt5Xmld.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath>C:\Program Files\VTK\include\vtk-8.2;.\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtXml;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>QT_QML_DEBUG;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_OPENGLEXTENSIONS_LIB;QT_QUICKWIDGETS_LIB;QT_UITOOLS_LIB;QT_XML_LIB;%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+      <QmlCacheGenerate>true</QmlCacheGenerate>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_OPENGLEXTENSIONS_LIB;QT_QUICKWIDGETS_LIB;QT_XML_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\VTK\include\vtk-8.2;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtXml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>C:\Program Files\VTK\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>vtkRenderingVolumeOpenGL2-8.2.lib;vtkDICOM-8.2.lib;C:\Program Files\VTK\lib\vtkjpeg-8.2.lib;C:\Program Files\VTK\lib\vtkpng-8.2.lib;C:\Program Files\VTK\lib\vtktiff-8.2.lib;C:\Program Files\VTK\lib\vtkImagingColor-8.2.lib;C:\Program Files\VTK\lib\vtkImagingCore-8.2.lib;C:\Program Files\VTK\lib\vtkRenderingCore-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersSources-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersGeneral-8.2.lib;C:\Program Files\VTK\lib\vtkCommonComputationalGeometry-8.2.lib;C:\Program Files\VTK\lib\vtkCommonColor-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersGeometry-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersCore-8.2.lib;C:\Program Files\VTK\lib\vtkIOCore-8.2.lib;C:\Program Files\VTK\lib\vtkCommonExecutionModel-8.2.lib;C:\Program Files\VTK\lib\vtkCommonDataModel-8.2.lib;C:\Program Files\VTK\lib\vtkCommonTransforms-8.2.lib;C:\Program Files\VTK\lib\vtkCommonMisc-8.2.lib;C:\Program Files\VTK\lib\vtkCommonMath-8.2.lib;C:\Program Files\VTK\lib\vtkCommonSystem-8.2.lib;C:\Program Files\VTK\lib\vtkCommonCore-8.2.lib;C:\Program Files\VTK\lib\vtksys-8.2.lib;c:\Program Files\VTK\lib\vtkInteractionStyle-8.2.lib;c:\Program Files\VTK\lib\vtkCommonCore-8.2.lib;c:\Program Files\VTK\lib\vtkDICOM-8.2.lib;C:\Program Files\VTK\lib\vtkGUISupportQt-8.2.lib;C:\Program Files\VTK\lib\vtkRenderingOpenGL2-8.2.lib;C:\Program Files\VTK\lib\vtkglew-8.2.lib;C:\Program Files\VTK\lib\vtkInteractionImage-8.2.lib;C:\Program Files\VTK\lib\vtkInteractionWidgets-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersHybrid-8.2.lib;C:\Program Files\VTK\lib\vtkFiltersModeling-8.2.lib;C:\Program Files\VTK\lib\vtkImagingGeneral-8.2.lib;C:\Program Files\VTK\lib\vtkImagingHybrid-8.2.lib;C:\Program Files\VTK\lib\vtkRenderingAnnotation-8.2.lib;C:\Program Files\VTK\lib\vtkRenderingFreeType-8.2.lib;C:\Program Files\VTK\lib\vtkfreetype-8.2.lib;C:\Program Files\VTK\lib\vtkRenderingVolume-8.2.lib;C:\Program Files\VTK\lib\vtkIOXML-8.2.lib;C:\Program Files\VTK\lib\vtkIOXMLParser-8.2.lib;C:\Program Files\VTK\lib\vtkexpat-8.2.lib;qtmain.lib;Qt53DCore.lib;Qt53DAnimation.lib;Qt53DExtras.lib;Qt53DInput.lib;Qt53DLogic.lib;Qt53DRender.lib;Qt5Core.lib;Qt5Gui.lib;Qt5OpenGL.lib;opengl32.lib;glu32.lib;Qt5Widgets.lib;Qt5OpenGLExtensions.lib;Qt5QuickWidgets.lib;Qt5Xml.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath>C:\Program Files\VTK\include\vtk-8.2;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtXml;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_OPENGLEXTENSIONS_LIB;QT_QUICKWIDGETS_LIB;QT_XML_LIB;%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="DicomDirClass.cpp" />
+    <ClCompile Include="DicomReaderClass.cpp" />
+    <ClCompile Include="DicomSeriesWriterFromVtkImageDataClass.cpp" />
+    <ClCompile Include="DicomSorterClass.cpp" />
+    <ClCompile Include="DicomTreeClass.cpp" />
+    <ClCompile Include="HounsfieldFilterClass.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="MathUtilsClass.cpp" />
+    <ClCompile Include="vtk3DViewerClass.cpp" />
+    <ClCompile Include="vtkWriterClass.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="MainWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="MainWindow.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="MainWindow.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="QtTest.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DicomDirClass.h" />
+    <ClInclude Include="DicomReaderClass.h" />
+    <ClInclude Include="DicomSeriesWriterFromVtkImageDataClass.h" />
+    <ClInclude Include="DicomSorterClass.h" />
+    <ClInclude Include="HounsfieldFilterClass.h" />
+    <ClInclude Include="MathUtilsClass.h" />
+    <ClInclude Include="vtk3DViewerClass.h" />
+    <ClInclude Include="vtkWriterClass.h" />
+    <QtMoc Include="DicomTreeClass.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\VTK\include\vtk-8.2;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\VTK\include\vtk-8.2;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets</IncludePath>
+    </QtMoc>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="msvc2017_64" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

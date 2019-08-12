@@ -1,0 +1,565 @@
+class vtkResliceCursorCallback : public vtkCommand
+{
+public:
+	static vtkResliceCursorCallback *New() { return new vtkResliceCursorCallback; }
+
+	void setUI(QLineEdit * saggital[15], QLineEdit * coronal[15], QLineEdit * axial[15], QLineEdit * windowlevel[2]);
+	void Execute(vtkObject *caller, unsigned long ev, void *callData) override
+	{
+
+		unsigned long ttt = ev;
+		double saggitalNormal[3];
+		double coronalNormal[3];
+		double axialNormal[3];
+
+		if (ev == vtkCommand::MouseWheelForwardEvent || ev == vtkCommand::MouseWheelBackwardEvent) {
+			int sign = (ev == vtkCommand::MouseWheelForwardEvent) ? 1 : -1;
+			vtkRenderWindowInteractor* interActor = dynamic_cast<vtkRenderWindowInteractor*>(caller);
+
+			if (interActor) {
+
+				if (interActor == this->Viewer[0]->GetInteractor()) {
+					this->Viewer[0]->IncrementSlice(sign);
+					int slice = this->Viewer[0]->GetSlice();
+					this->IPW[0]->SetSliceIndex(slice);
+				}
+
+
+
+				if (interActor == this->Viewer[1]->GetInteractor()) {
+					this->Viewer[1]->IncrementSlice(sign);
+					int slice = this->Viewer[1]->GetSlice();
+					this->IPW[1]->SetSliceIndex(slice);
+				}
+
+				if (interActor == this->Viewer[2]->GetInteractor()) {
+					this->Viewer[2]->IncrementSlice(sign);
+					int slice = this->Viewer[2]->GetSlice();
+					this->IPW[2]->SetSliceIndex(slice);
+				}
+			}
+
+			this->IPW[0]->GetInteractor()->GetRenderWindow()->Render();
+			return;
+		}
+
+
+		if (ev == vtkResliceCursorWidget::WindowLevelEvent ||
+			ev == vtkCommand::WindowLevelEvent ||
+			ev == vtkResliceCursorWidget::ResliceThicknessChangedEvent)
+		{
+			double window =  Viewer[2]->GetColorWindow();			// Render everything
+			double level = Viewer[2]->GetColorLevel();
+			windowlevel[0]->setText(QString::number(window, 'f', 3));
+			windowlevel[1]->setText(QString::number(level, 'f', 3));
+			/*
+			for (int i = 0; i < 3; i++)
+			{
+
+				this->RCW[i]->Render();
+			}
+			this->IPW[0]->GetInteractor()->GetRenderWindow()->Render();
+			*/
+			return;
+		}
+
+		/*
+		vtkImagePlaneWidget* ipw = dynamic_cast<vtkImagePlaneWidget*>(caller);
+		if (ipw)
+		{
+			double* wl = static_cast<double*>(callData);
+
+			if (ipw == this->IPW[0])
+			{
+
+				this->IPW[1]->SetWindowLevel(wl[0], wl[1], 1);
+				this->IPW[2]->SetWindowLevel(wl[0], wl[1], 1);
+			}
+			else if (ipw == this->IPW[1])
+			{
+				this->IPW[0]->SetWindowLevel(wl[0], wl[1], 1);
+				this->IPW[2]->SetWindowLevel(wl[0], wl[1], 1);
+			}
+			else if (ipw == this->IPW[2])
+			{
+				this->IPW[0]->SetWindowLevel(wl[0], wl[1], 1);
+				this->IPW[1]->SetWindowLevel(wl[0], wl[1], 1);
+			}
+		}
+		*/
+
+		if (ev == vtkResliceCursorWidget::ResliceAxesChangedEvent) {
+			vtkResliceCursorWidget *rcw = dynamic_cast<vtkResliceCursorWidget *>(caller);
+			/*
+			if (rcw) {
+				vtkResliceCursorLineRepresentation *rep = dynamic_cast<vtkResliceCursorLineRepresentation *>(rcw->GetRepresentation());
+				// Although the return value is not used, we keep the get calls
+				// in case they had side-effects
+
+
+				vtkResliceCursor *cur = rep->GetResliceCursor();
+				vtkResliceCursorActor *ac = rep->GetResliceCursorActor();
+				rep->GetResliceCursorActor()->GetCursorAlgorithm()->GetResliceCursor();
+				
+				if (rcw == RCW[0]) {
+
+					//saggital
+
+					RCW[0]->GetResliceCursorRepresentation()->GetPlaneSource()->GetNormal(saggitalNormal);
+					RCW[1]->GetResliceCursorRepresentation()->GetPlaneSource()->GetNormal(coronalNormal);
+					vtkMath::Cross(coronalNormal, saggitalNormal,axialNormal );
+					axialNormal[2] = abs(axialNormal[2]);
+
+					vtkPlaneSource *ps = static_cast<vtkPlaneSource *>(RCW[2]->GetResliceCursorRepresentation()->GetPlaneSource());
+					vtkPlaneSource *psipw = static_cast<vtkPlaneSource *>(this->IPW[2]->GetPolyDataAlgorithm());
+					//ps->SetNormal(axialNormal);
+
+					
+
+					double * origin = ps->GetOrigin();
+					
+					double * point1 = ps->GetPoint1();
+					
+					double * point2 = ps->GetPoint2();
+
+					//psipw->SetNormal(axialNormal);
+					psipw->SetOrigin(origin);
+					psipw->SetPoint1(point1);
+					psipw->SetPoint2(point2);
+
+					double * normal = ps->GetNormal();
+					double * center = ps->GetCenter();
+					axial[0]->setText(QString::number(origin[0], 'f', 3));
+					axial[1]->setText(QString::number(origin[1], 'f', 3));
+					axial[2]->setText(QString::number(origin[2], 'f', 3));
+					axial[3]->setText(QString::number(point2[0], 'f', 3));
+					axial[4]->setText(QString::number(point2[1], 'f', 3));
+					axial[5]->setText(QString::number(point2[2], 'f', 3));
+					axial[6]->setText(QString::number(point1[0], 'f', 3));
+					axial[7]->setText(QString::number(point1[1], 'f', 3));
+					axial[8]->setText(QString::number(point1[2], 'f', 3));
+					axial[9]->setText(QString::number(normal[0], 'f', 3));
+					axial[10]->setText(QString::number(normal[1], 'f', 3));
+					axial[11]->setText(QString::number(normal[2], 'f', 3));
+					axial[12]->setText(QString::number(center[0], 'f', 3));
+					axial[13]->setText(QString::number(center[1], 'f', 3));
+					axial[14]->setText(QString::number(center[2], 'f', 3));
+					
+					this->IPW[2]->UpdatePlacement();
+					//RCW[2]->Render();
+				}
+				
+				*/
+				
+				if (rcw)
+				{
+
+					vtkResliceCursorLineRepresentation *rep = dynamic_cast<vtkResliceCursorLineRepresentation *>(rcw->GetRepresentation());
+					// Although the return value is not used, we keep the get calls
+					// in case they had side-effects
+
+
+					vtkResliceCursor *cur = rep->GetResliceCursor();
+					vtkResliceCursorActor *ac = rep->GetResliceCursorActor();
+					rep->GetResliceCursorActor()->GetCursorAlgorithm()->GetResliceCursor();
+					for (int i = 0; i < 3; i++)
+					{
+
+						vtkPlaneSource *ps = static_cast<vtkPlaneSource *>(this->IPW[i]->GetPolyDataAlgorithm());
+
+						double * origin = this->RCW[i]->GetResliceCursorRepresentation()->GetPlaneSource()->GetOrigin();
+						ps->SetOrigin(origin);
+						double * point1 = this->RCW[i]->GetResliceCursorRepresentation()->GetPlaneSource()->GetPoint1();
+						ps->SetPoint1(point1);
+						double * point2 = this->RCW[i]->GetResliceCursorRepresentation()->GetPlaneSource()->GetPoint2();
+
+						ps->SetPoint2(point2);
+
+						double * normal = this->RCW[i]->GetResliceCursorRepresentation()->GetPlaneSource()->GetNormal();
+						double * center = this->RCW[i]->GetResliceCursorRepresentation()->GetPlaneSource()->GetCenter();
+						if (i == 0) {
+							saggital[0]->setText(QString::number(origin[0], 'f', 3));
+							saggital[1]->setText(QString::number(origin[1], 'f', 3));
+							saggital[2]->setText(QString::number(origin[2], 'f', 3));
+							saggital[3]->setText(QString::number(point2[0], 'f', 3));
+							saggital[4]->setText(QString::number(point2[1], 'f', 3));
+							saggital[5]->setText(QString::number(point2[2], 'f', 3));
+							saggital[6]->setText(QString::number(point1[0], 'f', 3));
+							saggital[7]->setText(QString::number(point1[1], 'f', 3));
+							saggital[8]->setText(QString::number(point1[2], 'f', 3));
+							saggital[9]->setText(QString::number(normal[0], 'f', 3));
+							saggital[10]->setText(QString::number(normal[1], 'f', 3));
+							saggital[11]->setText(QString::number(normal[2], 'f', 3));
+							saggital[12]->setText(QString::number(center[0], 'f', 3));
+							saggital[13]->setText(QString::number(center[1], 'f', 3));
+							saggital[14]->setText(QString::number(center[2], 'f', 3));
+
+						}
+
+						if (i == 1) {
+							coronal[0]->setText(QString::number(origin[0], 'f', 3));
+							coronal[1]->setText(QString::number(origin[1], 'f', 3));
+							coronal[2]->setText(QString::number(origin[2], 'f', 3));
+							coronal[3]->setText(QString::number(point2[0], 'f', 3));
+							coronal[4]->setText(QString::number(point2[1], 'f', 3));
+							coronal[5]->setText(QString::number(point2[2], 'f', 3));
+							coronal[6]->setText(QString::number(point1[0], 'f', 3));
+							coronal[7]->setText(QString::number(point1[1], 'f', 3));
+							coronal[8]->setText(QString::number(point1[2], 'f', 3));
+							coronal[9]->setText(QString::number(normal[0], 'f', 3));
+							coronal[10]->setText(QString::number(normal[1], 'f', 3));
+							coronal[11]->setText(QString::number(normal[2], 'f', 3));
+							coronal[12]->setText(QString::number(center[0], 'f', 3));
+							coronal[13]->setText(QString::number(center[1], 'f', 3));
+							coronal[14]->setText(QString::number(center[2], 'f', 3));
+
+						}
+						if (i == 2) {
+							axial[0]->setText(QString::number(origin[0], 'f', 3));
+							axial[1]->setText(QString::number(origin[1], 'f', 3));
+							axial[2]->setText(QString::number(origin[2], 'f', 3));
+							axial[3]->setText(QString::number(point2[0], 'f', 3));
+							axial[4]->setText(QString::number(point2[1], 'f', 3));
+							axial[5]->setText(QString::number(point2[2], 'f', 3));
+							axial[6]->setText(QString::number(point1[0], 'f', 3));
+							axial[7]->setText(QString::number(point1[1], 'f', 3));
+							axial[8]->setText(QString::number(point1[2], 'f', 3));
+							axial[9]->setText(QString::number(normal[0], 'f', 3));
+							axial[10]->setText(QString::number(normal[1], 'f', 3));
+							axial[11]->setText(QString::number(normal[2], 'f', 3));
+							axial[12]->setText(QString::number(center[0], 'f', 3));
+							axial[13]->setText(QString::number(center[1], 'f', 3));
+							axial[14]->setText(QString::number(center[2], 'f', 3));
+
+						}
+						// If the reslice plane has modified, update it on the 3D widget
+						this->IPW[i]->UpdatePlacement();
+
+					}
+					
+					
+			}
+		}
+		// Render everything
+		for (int i = 0; i < 3; i++)
+		{
+			this->RCW[i]->Render();
+		}
+		this->IPW[0]->GetInteractor()->GetRenderWindow()->Render();
+
+	}
+
+	
+
+	vtkResliceCursorCallback() {}
+	vtkResliceImageViewer *Viewer[3];
+	vtkImagePlaneWidget* IPW[3];
+	vtkResliceCursorWidget *RCW[3];
+	QLineEdit * saggital[15];
+	QLineEdit * coronal[15];
+	QLineEdit * axial[15];
+	QLineEdit * windowlevel[2];
+};
+
+void vtkResliceCursorCallback::setUI(QLineEdit * saggital[15], QLineEdit * coronal[15], QLineEdit * axial[15],  QLineEdit * windowlevel[2])
+{
+	for (int i = 0; i < 15; i++)
+	{
+		this->saggital[i] = saggital[i];
+		this->coronal[i] = coronal[i];
+		this->axial[i] = axial[i];
+	}
+	this->windowlevel[0] = windowlevel[0];
+	this->windowlevel[1] = windowlevel[1];
+}
+
+
+void vtk3DViewerClass::AxialMove()
+{
+	
+
+	//riw[2]->SetResliceMode(1);
+	double normalSaggital[3];
+	double normalCoronal[3];
+	double normalAxial[3];
+	double newnormalAxial[3];
+	double scalarMul = 0;
+
+
+
+	
+
+	double point2border[3];
+	vtkPlaneSource *psSaggital = static_cast<vtkPlaneSource *>(planeWidget[0]->GetPolyDataAlgorithm());
+	vtkPlaneSource *psCoronal = static_cast<vtkPlaneSource *>(planeWidget[1]->GetPolyDataAlgorithm());
+	vtkPlaneSource *psAxial = static_cast<vtkPlaneSource *>(planeWidget[2]->GetPolyDataAlgorithm());
+
+	//vtkPlaneSource *psAxial_riw = riw[2]->GetResliceCursorWidget()->GetResliceCursorRepresentation()->GetPlaneSource();
+
+	
+
+	psSaggital->GetNormal(normalSaggital);
+	psCoronal->GetNormal(normalCoronal);
+	psAxial->GetNormal(normalAxial);
+
+	/*
+	newnormalAxial[0] = normalCoronal[1] * normalSaggital[2] - normalCoronal[2] * normalSaggital[1];
+	newnormalAxial[1] = normalCoronal[2] * normalSaggital[0] - normalCoronal[0] * normalSaggital[2];
+	newnormalAxial[2] = abs(normalCoronal[0] * normalSaggital[1] - normalCoronal[1] * normalSaggital[0]);
+	*/
+	double tmp[3];
+	//	vtkMath::Cross(normalSaggital, normalCoronal, newnormalAxial);
+	vtkMath::Cross(normalCoronal, normalSaggital, newnormalAxial);
+	newnormalAxial[2] = abs(newnormalAxial[2]);
+
+	double lenOld = 0;
+	double lenNew = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		lenOld += normalAxial[i] * normalAxial[i];
+		lenNew += newnormalAxial[i] * newnormalAxial[i];
+	}
+	lenOld = sqrt(lenOld);
+	lenNew = sqrt(lenNew);
+
+	for (int i = 0; i < 3; i++)
+	{
+		scalarMul += newnormalAxial[i] * normalAxial[i];
+
+	}
+	double cos = scalarMul / lenOld * lenNew;
+	double cosxyz[3];
+	for (int i = 0; i < 3; i++)
+	{
+		cosxyz[i] = newnormalAxial[i] / lenNew;
+
+	}
+
+	double point2[3];
+	double point1[3];
+	double center[3];
+	double origin[3];
+	double n_point2[3];
+	double n_point1[3];
+	double n_center[3];
+	double n_origin[3];
+
+	planeWidget[2]->SetSliceIndex(0);
+	
+	psAxial->GetPoint2(point2);
+	psAxial->GetPoint1(point1);
+	psAxial->GetOrigin(origin);
+	psAxial->GetCenter(center);
+	
+	
+	psAxial->SetNormal(newnormalAxial);
+	
+	
+	/*
+	psAxial->GetNormal(tmp);
+	psAxial->GetPoint2(n_point2);
+	psAxial->GetPoint1(n_point1);
+	psAxial->GetOrigin(n_origin);
+	psAxial->GetCenter(n_center);
+	*/
+
+	vtkImageData * data = vtkImageData::New();
+	data->SetExtent(dataExtention);
+	data->SetSpacing(dataSpacing);
+	data->SetOrigin(0, 0, 0);
+	
+	data->SetInformation(outputData->GetInformation());
+
+	data->AllocateScalars(outputData->GetScalarType(), outputData->GetNumberOfScalarComponents());
+
+
+	for (int z = 0; z < sliceCount[2]; z++)
+	{
+
+
+
+		vtkImageData * dataReslice = planeWidget[2]->GetResliceOutput();
+		for (int y = 0; y < sliceCount[1] - 1; y++)
+		{
+			for (int x = 0; x < sliceCount[0] - 1; x++)
+			{
+				short* pixel = static_cast<short*>(data->GetScalarPointer(x, y, z));
+
+				pixel[0] = *static_cast<short*>(dataReslice->GetScalarPointer(x, y, 0));// dataReslicGetS GetScalarComponentAsDouble(x, y, 0, 0);
+			}
+		}
+
+		psAxial->GetCenter(n_center);
+		psAxial->GetPoint2(n_point2);
+		psAxial->GetPoint1(n_point1);
+		psAxial->GetOrigin(n_origin);
+		
+		center[2] = n_center[2];
+		psAxial->SetCenter(center);
+		psAxial->Push(dataSpacing[2]);
+		planeWidget[2]->UpdatePlacement();
+		/*
+		vtkResliceCursor * cursor =  riw[2]->GetResliceCursor();
+
+		cursor->SetCenter(center);
+		riw[2]->GetImageActor()->Update();
+		riw[2]->GetRenderer()->ResetCamera();
+		riw[2]->Render();
+		riw[0]->Render();
+		riw[1]->Render();
+		*/
+		//riw[2]->GetImageActor()->SetUserTransform(transform);
+		//vtkAbstractTransform * transform = planeWidget[2]->GetReslice()->GetResliceTransform();
+
+		ShowSaggital(psSaggital);
+		ShowCoronal(psCoronal);
+		ShowAxial(psAxial);
+
+		views[3]->GetRenderWindow()->Render();
+		QApplication::processEvents();
+
+		
+
+	}
+	vtkDataSetAlgorithm * tmp1 = vtkDataSetAlgorithm::New();
+	//vtkAlgorithmOutput * tmp2 = vtkAlgorithmOutput::New();
+
+
+	/*
+	tmp1->SetInputData(0, data);
+
+	tmp1->Update();
+	tmp1->UpdateExtent(dataExtention);
+
+	vtkAlgorithmOutput * tmp2 = tmp1->GetOutputPort();
+	vtkAlgorithmOutput * tm32 = tmp1->GetInputConnection(0, 0);
+	DicomSeriesWriterFromVtkImageDataClass * writer = new DicomSeriesWriterFromVtkImageDataClass(
+		tm32,
+		MetaData,
+		filePrefix,
+		"%s/IM-0001-%04.4d.dcm"
+	);
+*/
+}
+
+void vtk3DViewerClass::Transform3d()
+{
+	double normalSaggital[3];
+	double normalCoronal[3];
+	double normalAxial[3];
+	vtkPlaneSource *psSaggital = static_cast<vtkPlaneSource *>(planeWidget[0]->GetPolyDataAlgorithm());
+	vtkPlaneSource *psCoronal = static_cast<vtkPlaneSource *>(planeWidget[1]->GetPolyDataAlgorithm());
+	vtkPlaneSource *psAxial = static_cast<vtkPlaneSource *>(planeWidget[2]->GetPolyDataAlgorithm());
+	psSaggital->GetNormal(normalSaggital);
+	psCoronal->GetNormal(normalCoronal);
+	//vtkMath::Cross(normalCoronal, normalSaggital, normalAxial);
+	vtkMath::Cross(normalSaggital,normalCoronal, normalAxial);
+	
+	double angle_x = vtkMath::DegreesFromRadians(vtkMath::AngleBetweenVectors(nSaggital, normalSaggital));
+	double angle_y = vtkMath::DegreesFromRadians(vtkMath::AngleBetweenVectors(nCoronal, normalCoronal));
+	double angle_z = vtkMath::DegreesFromRadians(vtkMath::AngleBetweenVectors(nAxial, normalAxial));
+	angle_x = 0;
+	angle_y = 45;
+	angle_z = 0;
+	vtkMatrix4x4 * currentmatrix = volume3D->GetUserMatrix();
+	vtkTransform * transform = vtkTransform::New();
+	double center[3];
+	double bounds[6];
+	volume3D->GetBounds(bounds);
+	center[0] = (bounds[1] + bounds[0]) / 2.0;
+	center[1] = (bounds[3] + bounds[2]) / 2.0;
+	center[2] = (bounds[5] + bounds[4]) / 2.0;
+
+	transform->SetMatrix(currentmatrix);
+	transform->PostMultiply();
+	//transform->Translate(-center[0], -center[1], -center[2]);
+	
+	//transform->RotateX(angle_x);
+	transform->RotateY(angle_y);
+	//transform->RotateZ(angle_z);
+	
+	transform->Update();
+
+	//volume3D->SetUserTransform(transform);
+	vtkMatrix4x4 * tm = transform->GetMatrix();
+	vtkImageReslice * imageReslice = vtkImageReslice::New();
+	imageReslice->SetInputConnection(outputPort);
+	imageReslice->SetInformationInput(outputData);
+	imageReslice->SetOutputDimensionality(3);
+	imageReslice->SetResliceAxes(transform->GetMatrix());
+	//imageReslice->SetResliceTransform(transform);
+	//imageReslice->WrapOn();
+	imageReslice->SetOutputSpacing(dataSpacing);
+	imageReslice->SetOutputExtent(dataExtention);
+	imageReslice->SetInterpolationModeToLinear();
+	imageReslice->SetOutputOriginToDefault();
+	//imageReslice->SetResliceAxesOrigin(PatientMatrix->GetElement(0, 3), PatientMatrix->GetElement(1, 3), PatientMatrix->GetElement(2, 3));
+	//imageReslice->SetOutputOrigin(PatientMatrix->GetElement(0, 3), PatientMatrix->GetElement(1, 3), PatientMatrix->GetElement(2, 3));
+	imageReslice->Update();
+	double pos[3];
+	 volume3D->GetPosition(pos);
+	mapper->RemoveAllInputConnections(0);
+	mapper->SetInputConnection(imageReslice->GetOutputPort());
+	mapper->Update();
+
+	/*
+	double x = PatientMatrix->GetElement(0, 3);
+	double y = PatientMatrix->GetElement(1, 3);
+	double z = PatientMatrix->GetElement(2, 3);
+	x = (x < 0) ? fabs(x) : -x;
+	y = (y < 0) ? fabs(y) : -y;
+	z = (z >= 0) ? -z : fabs(z);
+	
+	volume3D->SetPosition(x, y, z);
+	*/
+	volume3D->Update();
+
+	double pos1[3];
+	volume3D->GetPosition(pos1);
+	
+
+	
+	/*
+	for (int i = 0; i < 3; i++)
+	{
+
+		riw[i]->GetImageActor()->SetUserTransform(transform);// SetUserMatrix(PatientMatrix);
+		riw[i]->GetImageActor()->Update();
+		riw[i]->GetRenderer()->ResetCamera();
+		riw[i]->Render();
+
+
+	}
+	*/
+	/*
+	double deltaSaggital[3];
+	double deltaCoronal[3];
+	double deltaAxial[3];
+
+	vtkMath::Subtract(nSaggital, normalSaggital, deltaSaggital);
+	vtkMath::Subtract(nCoronal, normalCoronal, deltaCoronal);
+	vtkMath::Subtract(nAxial, normalAxial, deltaAxial);
+	*/
+	psAxial->SetNormal(normalAxial);
+	planeWidget[2]->UpdatePlacement();
+
+	//vtkMatrix4x4 * transform = MathUtilsClass::getRotateMatrix(angle_x,angle_y,angle_z);
+	//MathUtilsClass::getRotateTrasform(outputPort,MetaData,angle_x, angle_y, angle_z);
+
+	ShowSaggital(psSaggital);
+	ShowCoronal(psCoronal);
+	ShowAxial(psAxial);
+
+	views[3]->GetRenderWindow()->Render();
+
+   /*
+	DicomSeriesWriterFromVtkImageDataClass * writer = new DicomSeriesWriterFromVtkImageDataClass(
+		imageReslice->GetOutputPort(),
+		MetaData,
+		filePrefix,
+		"%s/IM-0001-%04.4d.dcm"
+	);
+	
+	*/
+	
+}

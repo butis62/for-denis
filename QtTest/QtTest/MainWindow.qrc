@@ -1,0 +1,20 @@
+<RCC>
+  <qresource prefix="MainWindow">
+    <file>Load.png</file>
+    <file>Downloads folder.png</file>
+    <file>Red mark.png</file>
+    <file>Diagram.png</file>
+    <file>Forward.png</file>
+    <file>iconfinder_52_62709.png</file>
+    <file>iconfinder_53_62710.png</file>
+    <file>Save.png</file>
+    <file>Go.png</file>
+    <file>Folder.png</file>
+    <file>Floppy-icon.png</file>
+    <file>Update.png</file>
+    <file>Exit.png</file>
+    <file>Modify.png</file>
+    <file>3d bar chart.png</file>
+    <file>Zoom.png</file>
+  </qresource>
+</RCC>

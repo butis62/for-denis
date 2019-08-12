@@ -1,0 +1,4 @@
+// Файлы указаний помогают среде IDE Visual Studio интерпретировать идентификаторы Visual C++
+// (например, имена функций и макросов).
+// Дополнительные сведения: https://go.microsoft.com/fwlink/?linkid=865984
+#define VTK_MODULE_INIT(M) VTK_AUTOINIT_DECLARE(M) static struct M##_ModuleInit { M##_ModuleInit() { VTK_AUTOINIT_CONSTRUCT(M) } ~M##_ModuleInit() { VTK_AUTOINIT_DESTRUCT(M) } } M##_ModuleInit_Instance;

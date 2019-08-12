@@ -1,0 +1,2444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowClass</class>
+ <widget class="QMainWindow" name="MainWindowClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>557</width>
+    <height>596</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="horizontalLayoutWidget">
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="0">
+        <item>
+         <widget class="QToolBox" name="toolBox">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>361</width>
+             <height>364</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Patients</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QTreeView" name="dicomDirView"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>361</width>
+             <height>364</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Window/Level Settings</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <layout class="QVBoxLayout" name="parWindowLevelToobar"/>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="tableWindowLevelPreset">
+              <attribute name="horizontalHeaderDefaultSectionSize">
+               <number>70</number>
+              </attribute>
+              <attribute name="horizontalHeaderMinimumSectionSize">
+               <number>50</number>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <column>
+               <property name="text">
+                <string>Image</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Name</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Window</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Level</string>
+               </property>
+              </column>
+              <item row="0" column="1">
+               <property name="text">
+                <string>Bone</string>
+               </property>
+              </item>
+              <item row="0" column="2">
+               <property name="text">
+                <string>1500</string>
+               </property>
+              </item>
+              <item row="0" column="3">
+               <property name="text">
+                <string>300</string>
+               </property>
+              </item>
+              <item row="1" column="1">
+               <property name="text">
+                <string>Bone 1</string>
+               </property>
+              </item>
+              <item row="1" column="2">
+               <property name="text">
+                <string>2000</string>
+               </property>
+              </item>
+              <item row="1" column="3">
+               <property name="text">
+                <string>300</string>
+               </property>
+              </item>
+              <item row="2" column="1">
+               <property name="text">
+                <string>Bone 2</string>
+               </property>
+              </item>
+              <item row="2" column="2">
+               <property name="text">
+                <string>2000</string>
+               </property>
+              </item>
+              <item row="2" column="3">
+               <property name="text">
+                <string>350</string>
+               </property>
+              </item>
+              <item row="3" column="1">
+               <property name="text">
+                <string>Bone Spine</string>
+               </property>
+              </item>
+              <item row="3" column="2">
+               <property name="text">
+                <string>1800</string>
+               </property>
+              </item>
+              <item row="3" column="3">
+               <property name="text">
+                <string>400</string>
+               </property>
+              </item>
+              <item row="4" column="1">
+               <property name="text">
+                <string>Liver</string>
+               </property>
+              </item>
+              <item row="4" column="2">
+               <property name="text">
+                <string>2000</string>
+               </property>
+              </item>
+              <item row="4" column="3">
+               <property name="text">
+                <string>-500</string>
+               </property>
+              </item>
+              <item row="5" column="1">
+               <property name="text">
+                <string>Lung - Hard</string>
+               </property>
+              </item>
+              <item row="5" column="2">
+               <property name="text">
+                <string>1000</string>
+               </property>
+              </item>
+              <item row="5" column="3">
+               <property name="text">
+                <string>-600</string>
+               </property>
+              </item>
+              <item row="6" column="1">
+               <property name="text">
+                <string>Lung - Soft</string>
+               </property>
+              </item>
+              <item row="6" column="2">
+               <property name="text">
+                <string>1500</string>
+               </property>
+              </item>
+              <item row="6" column="3">
+               <property name="text">
+                <string>-700</string>
+               </property>
+              </item>
+              <item row="7" column="1">
+               <property name="text">
+                <string>Lung</string>
+               </property>
+              </item>
+              <item row="7" column="2">
+               <property name="text">
+                <string>1500</string>
+               </property>
+              </item>
+              <item row="7" column="3">
+               <property name="text">
+                <string>-650</string>
+               </property>
+              </item>
+              <item row="8" column="1">
+               <property name="text">
+                <string>Soft Tissue</string>
+               </property>
+              </item>
+              <item row="8" column="2">
+               <property name="text">
+                <string>300</string>
+               </property>
+              </item>
+              <item row="8" column="3">
+               <property name="text">
+                <string>30</string>
+               </property>
+              </item>
+              <item row="9" column="1">
+               <property name="text">
+                <string>Soft Tissue</string>
+               </property>
+              </item>
+              <item row="9" column="2">
+               <property name="text">
+                <string>400</string>
+               </property>
+              </item>
+              <item row="9" column="3">
+               <property name="text">
+                <string>40</string>
+               </property>
+              </item>
+              <item row="10" column="1">
+               <property name="text">
+                <string>Vasculature - Hard</string>
+               </property>
+              </item>
+              <item row="10" column="2">
+               <property name="text">
+                <string>240</string>
+               </property>
+              </item>
+              <item row="10" column="3">
+               <property name="text">
+                <string>80</string>
+               </property>
+              </item>
+              <item row="11" column="1">
+               <property name="text">
+                <string>Vasculature - Soft</string>
+               </property>
+              </item>
+              <item row="11" column="2">
+               <property name="text">
+                <string>650</string>
+               </property>
+              </item>
+              <item row="11" column="3">
+               <property name="text">
+                <string>160</string>
+               </property>
+              </item>
+              <item row="12" column="1">
+               <property name="text">
+                <string>Mediastinum</string>
+               </property>
+              </item>
+              <item row="12" column="2">
+               <property name="text">
+                <string>350</string>
+               </property>
+              </item>
+              <item row="12" column="3">
+               <property name="text">
+                <string>25</string>
+               </property>
+              </item>
+              <item row="13" column="1">
+               <property name="text">
+                <string>Ischemia</string>
+               </property>
+              </item>
+              <item row="13" column="2">
+               <property name="text">
+                <string>15</string>
+               </property>
+              </item>
+              <item row="13" column="3">
+               <property name="text">
+                <string>32</string>
+               </property>
+              </item>
+              <item row="14" column="1">
+               <property name="text">
+                <string>Ischemia - Soft</string>
+               </property>
+              </item>
+              <item row="14" column="2">
+               <property name="text">
+                <string>80</string>
+               </property>
+              </item>
+              <item row="14" column="3">
+               <property name="text">
+                <string>20</string>
+               </property>
+              </item>
+              <item row="15" column="1">
+               <property name="text">
+                <string>Hila, Pleura</string>
+               </property>
+              </item>
+              <item row="15" column="2">
+               <property name="text">
+                <string>350</string>
+               </property>
+              </item>
+              <item row="15" column="3">
+               <property name="text">
+                <string>50</string>
+               </property>
+              </item>
+              <item row="16" column="1">
+               <property name="text">
+                <string>DICOM</string>
+               </property>
+              </item>
+              <item row="16" column="2">
+               <property name="text">
+                <string>350</string>
+               </property>
+              </item>
+              <item row="16" column="3">
+               <property name="text">
+                <string>0</string>
+               </property>
+              </item>
+              <item row="17" column="1">
+               <property name="text">
+                <string>Temporal bones</string>
+               </property>
+              </item>
+              <item row="17" column="2">
+               <property name="text">
+                <string>2800</string>
+               </property>
+              </item>
+              <item row="17" column="3">
+               <property name="text">
+                <string>600</string>
+               </property>
+              </item>
+              <item row="18" column="1">
+               <property name="text">
+                <string>Emphysema</string>
+               </property>
+              </item>
+              <item row="18" column="2">
+               <property name="text">
+                <string>500</string>
+               </property>
+              </item>
+              <item row="18" column="3">
+               <property name="text">
+                <string>-850</string>
+               </property>
+              </item>
+              <item row="19" column="1">
+               <property name="text">
+                <string>Brain</string>
+               </property>
+              </item>
+              <item row="19" column="2">
+               <property name="text">
+                <string>100</string>
+               </property>
+              </item>
+              <item row="19" column="3">
+               <property name="text">
+                <string>35</string>
+               </property>
+              </item>
+              <item row="20" column="1">
+               <property name="text">
+                <string>Predicted channel</string>
+               </property>
+              </item>
+              <item row="20" column="2">
+               <property name="text">
+                <string>1535</string>
+               </property>
+              </item>
+              <item row="20" column="3">
+               <property name="text">
+                <string>3071</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_4">
+              <property name="title">
+               <string>Current Settings</string>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLabel" name="label_61">
+                 <property name="text">
+                  <string>Window</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="curWindow"/>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_62">
+                 <property name="text">
+                  <string>Level</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="curLevel"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_3">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>361</width>
+             <height>364</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Volume Property Settings</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <layout class="QVBoxLayout" name="parVolumePropertyToolbar"/>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="tableVolumePropertyPreset">
+              <attribute name="horizontalHeaderDefaultSectionSize">
+               <number>400</number>
+              </attribute>
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="verticalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>Name</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_4">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>361</width>
+             <height>364</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Slice Settings</string>
+           </attribute>
+           <widget class="QCheckBox" name="fResliceMode">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>111</width>
+              <height>17</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Oblique slice</string>
+            </property>
+           </widget>
+           <widget class="QGroupBox" name="groupBox">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>40</y>
+              <width>221</width>
+              <height>251</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>Saggital</string>
+            </property>
+            <widget class="QLabel" name="label">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>40</y>
+               <width>47</width>
+               <height>13</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_Origin_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>40</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_Origin_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>40</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_2">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>40</y>
+               <width>10</width>
+               <height>13</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_Origin_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>40</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_3">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>40</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_UL_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>90</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_UL_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>90</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_4">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>90</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_5">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>90</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_UL_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>90</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_6">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>90</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_LR_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>140</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_7">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>140</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_LR_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>140</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_LR_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>140</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_8">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>140</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_9">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>140</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_10">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>20</y>
+               <width>47</width>
+               <height>13</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Origin</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_11">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>70</y>
+               <width>91</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Upper Left Point</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_12">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>120</y>
+               <width>81</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Lower right Point</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_13">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>180</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_N_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>180</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_N_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>180</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_14">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>160</y>
+               <width>81</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Normal</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_15">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>180</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_N_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>180</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_16">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>180</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_17">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>220</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_C_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>220</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_18">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>200</y>
+               <width>81</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Center</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_C_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>220</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_19">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>220</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_20">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>220</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="saggital_C_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>220</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>300</y>
+              <width>221</width>
+              <height>251</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>Coronal</string>
+            </property>
+            <widget class="QLabel" name="label_21">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>40</y>
+               <width>47</width>
+               <height>13</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_Origin_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>40</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_Origin_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>40</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_22">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>40</y>
+               <width>10</width>
+               <height>13</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_Origin_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>40</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_23">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>40</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_UL_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>90</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_UL_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>90</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_24">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>90</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_25">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>90</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_UL_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>90</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_26">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>90</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_LR_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>140</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_27">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>140</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_LR_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>140</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_LR_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>140</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_28">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>140</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_29">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>140</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_30">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>20</y>
+               <width>47</width>
+               <height>13</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Origin</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_31">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>70</y>
+               <width>91</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Upper Left Point</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_32">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>120</y>
+               <width>81</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Lower right Point</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_33">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>180</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_N_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>180</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_N_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>180</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_34">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>160</y>
+               <width>81</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Normal</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_35">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>180</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_N_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>180</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_36">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>180</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_37">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>220</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_C_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>220</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_38">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>200</y>
+               <width>81</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Center</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_C_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>220</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_39">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>220</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_40">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>220</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="coronal_C_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>220</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="geometry">
+             <rect>
+              <x>250</x>
+              <y>40</y>
+              <width>221</width>
+              <height>251</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>Axial</string>
+            </property>
+            <widget class="QLabel" name="label_41">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>40</y>
+               <width>47</width>
+               <height>13</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_Origin_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>40</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_Origin_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>40</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_42">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>40</y>
+               <width>10</width>
+               <height>13</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_Origin_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>40</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_43">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>40</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_UL_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>90</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_UL_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>90</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_44">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>90</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_45">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>90</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_UL_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>90</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_46">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>90</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_LR_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>140</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_47">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>140</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_LR_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>140</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_LR_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>140</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_48">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>140</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_49">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>140</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_50">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>20</y>
+               <width>47</width>
+               <height>13</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Origin</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_51">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>70</y>
+               <width>91</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Upper Left Point</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_52">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>120</y>
+               <width>81</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Lower right Point</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_53">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>180</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_N_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>180</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_N_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>180</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_54">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>160</y>
+               <width>81</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Normal</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_55">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>180</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_N_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>180</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_56">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>180</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_57">
+             <property name="geometry">
+              <rect>
+               <x>80</x>
+               <y>220</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_C_X">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>220</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_58">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>200</y>
+               <width>81</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Center</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_C_Y">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>220</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_59">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>220</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_60">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>220</y>
+               <width>16</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="axial_C_Z">
+             <property name="geometry">
+              <rect>
+               <x>160</x>
+               <y>220</y>
+               <width>51</width>
+               <height>20</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QLabel" name="label_63">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>290</y>
+              <width>47</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Slice pos</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="slicePos">
+            <property name="geometry">
+             <rect>
+              <x>320</x>
+              <y>290</y>
+              <width>113</width>
+              <height>20</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_64">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>320</y>
+              <width>51</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Slice index</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="sliceIndex">
+            <property name="geometry">
+             <rect>
+              <x>320</x>
+              <y>320</y>
+              <width>113</width>
+              <height>20</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_67">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>350</y>
+              <width>47</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Y Degree</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="yDegree">
+            <property name="geometry">
+             <rect>
+              <x>320</x>
+              <y>350</y>
+              <width>113</width>
+              <height>20</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="planeSavePngChoice">
+            <property name="geometry">
+             <rect>
+              <x>370</x>
+              <y>10</y>
+              <width>16</width>
+              <height>19</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="MainWindow.qrc">
+              <normaloff>:/MainWindow/Load.png</normaloff>:/MainWindow/Load.png</iconset>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="page_5">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>361</width>
+             <height>364</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Hounsfield filter</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <layout class="QVBoxLayout" name="parHounsfieldFilterToolbar"/>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_5">
+              <property name="title">
+               <string>GroupBox</string>
+              </property>
+              <widget class="QLabel" name="label_66">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>60</y>
+                 <width>31</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Max</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_65">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>20</y>
+                 <width>16</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Min</string>
+               </property>
+              </widget>
+              <widget class="QDoubleSpinBox" name="minHounsfieldFilter">
+               <property name="geometry">
+                <rect>
+                 <x>40</x>
+                 <y>20</y>
+                 <width>91</width>
+                 <height>22</height>
+                </rect>
+               </property>
+              </widget>
+              <widget class="QDoubleSpinBox" name="maxHounsfieldFilter">
+               <property name="geometry">
+                <rect>
+                 <x>40</x>
+                 <y>60</y>
+                 <width>91</width>
+                 <height>22</height>
+                </rect>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="horizontalLayoutWidget_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1">
+        <item>
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tab">
+           <attribute name="title">
+            <string>Tab 1</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <layout class="QGridLayout" name="gridLayout" rowstretch="0,0" columnstretch="0,0">
+              <item row="0" column="0">
+               <widget class="QVTKOpenGLWidget" name="view1" native="true"/>
+              </item>
+              <item row="1" column="1">
+               <widget class="QVTKOpenGLWidget" name="view3" native="true"/>
+              </item>
+              <item row="0" column="1">
+               <widget class="QVTKOpenGLWidget" name="view4" native="true"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QVTKOpenGLWidget" name="view2" native="true"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="title">
+            <string>Tab 2</string>
+           </attribute>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>557</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_DicomDir_File"/>
+    <addaction name="actionOpen_Dicom_Folder_and_predicted_channel_file"/>
+    <addaction name="actionSave_to_Dicom"/>
+    <addaction name="actionSave_to_Stl"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <widget class="QMenu" name="menu3D_Actor_View">
+     <property name="title">
+      <string>3D Actor View</string>
+     </property>
+     <addaction name="actionVOI_actor"/>
+     <addaction name="actionSagittal_slice_actor"/>
+     <addaction name="actionCoronal_slice_actor"/>
+     <addaction name="actionAxial_slice_actor"/>
+     <addaction name="action3D_actor"/>
+    </widget>
+    <addaction name="menu3D_Actor_View"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpen_DicomDir_File"/>
+   <addaction name="actionOpen_Dicom_Folder_and_predicted_channel_file"/>
+   <addaction name="actionSave_to_Dicom"/>
+   <addaction name="actionSave_to_Stl"/>
+   <addaction name="actionSave_axial_slice_to_Png"/>
+   <addaction name="actionUse_voi"/>
+   <addaction name="separator"/>
+   <addaction name="actionAxial_move"/>
+   <addaction name="actionMove_to_slice"/>
+   <addaction name="actionUpdate_axial_normale"/>
+   <addaction name="separator"/>
+   <addaction name="actionExit"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Exit.png</normaloff>:/MainWindow/Exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionOpen_DicomDir_File">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Folder.png</normaloff>:/MainWindow/Folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Dicom Folder</string>
+   </property>
+   <property name="toolTip">
+    <string>Open Dicom Folder</string>
+   </property>
+  </action>
+  <action name="actionUpdate_scene">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Modify.png</normaloff>:/MainWindow/Modify.png</iconset>
+   </property>
+   <property name="text">
+    <string>Update scene</string>
+   </property>
+  </action>
+  <action name="actionUpdate_window_level_settings">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Update.png</normaloff>:/MainWindow/Update.png</iconset>
+   </property>
+   <property name="text">
+    <string>Update window/level settings</string>
+   </property>
+  </action>
+  <action name="actionAxial_move">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Go.png</normaloff>:/MainWindow/Go.png</iconset>
+   </property>
+   <property name="text">
+    <string>Axial move</string>
+   </property>
+  </action>
+  <action name="actionSave_to_Dicom">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Save.png</normaloff>:/MainWindow/Save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save to Dicom</string>
+   </property>
+  </action>
+  <action name="actionOpen_Dicom_Folder_and_predicted_channel_file">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/iconfinder_52_62709.png</normaloff>:/MainWindow/iconfinder_52_62709.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Dicom Folder and predicted channel file</string>
+   </property>
+  </action>
+  <action name="actionSave_to_Stl">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Floppy-icon.png</normaloff>:/MainWindow/Floppy-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save to Stl</string>
+   </property>
+  </action>
+  <action name="actionApply_Hounsfield_filter">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Update.png</normaloff>:/MainWindow/Update.png</iconset>
+   </property>
+   <property name="text">
+    <string>Apply Hounsfield filter</string>
+   </property>
+  </action>
+  <action name="actionMove_to_slice">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Forward.png</normaloff>:/MainWindow/Forward.png</iconset>
+   </property>
+   <property name="text">
+    <string>Move to slice</string>
+   </property>
+  </action>
+  <action name="actionUpdate_axial_normale">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Diagram.png</normaloff>:/MainWindow/Diagram.png</iconset>
+   </property>
+   <property name="text">
+    <string>Update axial normale</string>
+   </property>
+   <property name="toolTip">
+    <string>Update axial normale</string>
+   </property>
+  </action>
+  <action name="actionUse_voi">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Red mark.png</normaloff>:/MainWindow/Red mark.png</iconset>
+   </property>
+   <property name="text">
+    <string>Use voi</string>
+   </property>
+   <property name="toolTip">
+    <string>Use voi</string>
+   </property>
+  </action>
+  <action name="actionSave_axial_slice_to_Png">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Downloads folder.png</normaloff>:/MainWindow/Downloads folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save plane to Png</string>
+   </property>
+   <property name="toolTip">
+    <string>Save plane to Png</string>
+   </property>
+  </action>
+  <action name="actionSaveSaggitalToPng">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Save sagittal plane</string>
+   </property>
+   <property name="toolTip">
+    <string>Save sagittal plane to png file</string>
+   </property>
+  </action>
+  <action name="actionSaveCoronalToPng">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Save coronal plane</string>
+   </property>
+   <property name="toolTip">
+    <string>Save coronal plane to png file</string>
+   </property>
+  </action>
+  <action name="actionSaveAxialToPng">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Save axial plane</string>
+   </property>
+   <property name="toolTip">
+    <string>Save axial plane to png file</string>
+   </property>
+  </action>
+  <action name="actionUpdate_volume_property_settings">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/MainWindow/Update.png</normaloff>:/MainWindow/Update.png</iconset>
+   </property>
+   <property name="text">
+    <string>Update volume property settings</string>
+   </property>
+   <property name="toolTip">
+    <string>Update volume property settings</string>
+   </property>
+  </action>
+  <action name="actionVOI_actor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>VOI actor</string>
+   </property>
+   <property name="toolTip">
+    <string>VOI Actor view</string>
+   </property>
+  </action>
+  <action name="actionAxial_slice_actor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Axial slice actor</string>
+   </property>
+   <property name="toolTip">
+    <string>Set Axial slice actor visibility on 3D</string>
+   </property>
+  </action>
+  <action name="actionSagittal_slice_actor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Sagittal slice actor</string>
+   </property>
+   <property name="toolTip">
+    <string>Set Sagittal slice actor visibility on 3D</string>
+   </property>
+  </action>
+  <action name="actionCoronal_slice_actor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Coronal slice actor</string>
+   </property>
+   <property name="toolTip">
+    <string>Set Coronal slice actor visibility on 3D</string>
+   </property>
+  </action>
+  <action name="action3D_actor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>3D</string>
+   </property>
+   <property name="toolTip">
+    <string>Set 3D actor visibility</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKOpenGLWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKOpenGLWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="MainWindow.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>297</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
